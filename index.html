@@ -13,5 +13,43 @@
     </head>
     <body>
       <h1>TIC TAC TOE</h1>
+      <h2>Testing fonts and shit</h2>
+      <section>
+<form id="sign-up-form" class="border">
+  <fieldset>
+    <legend>Sign up!</legend>
+    <label for="email"></label>
+    <input id="email" type="email" name="credential[email]" placeholder="Email">
+    <label for="password">Password</label>
+    <input id="password" type="password" name="credentials[password]" placeholder="Password">
+    <label for="password_confirmation">Password Confirmation</label>
+    <input id="password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+    <input type="submit" value="Sign up!">
+  </fieldset>
+</form>
+
+<form id="sign-in-form" class="border">
+        <fieldset>
+          <legend>Sign in!</legend>
+          <label for="sign-in-email">Email</label>
+          <input id="sign-in-email" name="credentials[email]" type="email" placeholder="Enter your Email">
+          <label for="sign-in-password">Password</label>
+          <input id="sign-in-password" name="credentials[password]" type="password" placeholder="Enter your Password">
+          <input type="submit" value="Login">
+        </fieldset>
+      </form>
+
+      <form id="change-password" class="border">
+        <fieldset>
+          <legend>Change Password</legend>
+          <label for="old-pw">Old Password</label>
+          <input id="old-pw" name="passwords[old]" type="password" placeholder="Old Password">
+          <label for="new-pw">New Password</label>
+          <input id="new-pw" name="passwords[new]" type="password" placeholder="New Password">
+          <input type="submit" value="CHANGE">
+        </fieldset>
+      </form>
+
+      </section>
     </body>
 </html>
