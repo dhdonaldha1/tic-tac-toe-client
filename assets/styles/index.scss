@@ -1,1 +1,50 @@
 @import '~bootstrap/scss/bootstrap';
+
+body{
+  background-color: yellow;
+}
+
+h2{
+  color: blue;
+}
+
+
+.legend{
+  color: red;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.flex-center{
+  justify-content: center;
+  align-items: center;
+}
+.board-container{
+  height:100%;
+  Width: 100%;
+  padding: 150px 0 0 0;
+}
+
+.board{
+  width: 618px;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  border: 2px solid blue;
+}
+
+.square:hover{
+  background-color: white;
+}

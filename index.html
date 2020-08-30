@@ -14,10 +14,12 @@
     <body>
       <h1>TIC TAC TOE</h1>
       <h2>Testing fonts and shit</h2>
+<p id="sign-up-message"></p>
       <section>
+    <p id="sign-up-message"></p>
 <form id="sign-up-form" class="border">
   <fieldset>
-    <legend>Sign up!</legend>
+    <div class="legend"><legend>Sign up!</legend></div>
     <label for="email"></label>
     <input id="email" type="email" name="credential[email]" placeholder="Email">
     <label for="password">Password</label>
@@ -27,6 +29,7 @@
     <input type="submit" value="Sign up!">
   </fieldset>
 </form>
+
 
 <form id="sign-in-form" class="border">
         <fieldset>
@@ -51,5 +54,29 @@
       </form>
 
       </section>
+
+      <input type="button" value="New Game" onclick="msg()">
+      <script>
+      function msg(){
+        alert("New game started");
+      }
+      </script>
+
+<div class="board-container flex-container flex-column flex-center">
+  <div class="board flex-container flex-wrap flex-center">
+
+  <div class="square">"1A"</div>
+  <div class="square">"1B"</div>
+  <div class="square">"1C"</div>
+  <div class="square">"2A"</div>
+  <div class="square">"2B"</div>
+  <div class="square">"2C"</div>
+  <div class="square">"3A"</div>
+  <div class="square">"3B"</div>
+  <div class="square">"3C"</div>
+
+</div>
+</div>
+
     </body>
 </html>
