@@ -13,7 +13,8 @@
     </head>
     <body>
       <h1>TIC TAC TOE</h1>
-      <h2>Testing fonts</h2>
+      <h2>a game of wits</h2>
+      <h3>hello my little kitten</h3>
 <p id="sign-up-message"></p>
       <section>
     <p id="sign-up-message"></p>
@@ -56,25 +57,31 @@
 
       </section>
 
-      <input type="button" value="New Game" onclick="msg()">
+      <input id="newGame" type="button" value="New Game" onclick="msg1()">
+      <script>
+      function msg1(){
+        console.log('start new game')
+      }
+      </script>
+      <input id="signOut" type="button" value="Log Out" onclick="msg()">
       <script>
       function msg(){
-        alert("New game started");
+        alert("Logged Out");
       }
       </script>
 
 <div class="board-container flex-container flex-column flex-center">
   <div class="board flex-container flex-wrap flex-center">
 
-  <div class="square">"1A"</div>
-  <div class="square">"1B"</div>
-  <div class="square">"1C"</div>
-  <div class="square">"2A"</div>
-  <div class="square">"2B"</div>
-  <div class="square">"2C"</div>
-  <div class="square">"3A"</div>
-  <div class="square">"3B"</div>
-  <div class="square">"3C"</div>
+  <div class="square flex-center flex-container"></div>
+  <div class="square flex-center flex-container"></div>
+  <div class="square flex-center flex-container"></div>
+  <div class="square flex-center flex-container"></div>
+  <div class="square flex-center flex-container"></div>
+  <div class="square flex-center flex-container"></div>
+  <div class="square flex-center flex-container"></div>
+  <div class="square flex-center flex-container"></div>
+  <div class="square flex-center flex-container"></div>
 
 </div>
 </div>

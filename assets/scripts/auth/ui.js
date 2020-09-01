@@ -12,8 +12,15 @@ const onSignUpFailure = function(error) {
 
 const onSignInSuccess = function(response) {
 console.log('SIGNED IN')
+store.user = response.user
+  $('.board').show()
+  $('#signOut').show()
+  $('#newGame').show()
   $('#sign-in-message').text('Thanks for signing in ' + response.user.email)
 $('#sign-in-form').trigger('reset')
+$('#change-password').show()
+$('#sign-up-form').hide()
+  $('#sign-in-form').hide()
 }
 const onSignInFailure = function(error) {
   console.log('failed sign in try again')
