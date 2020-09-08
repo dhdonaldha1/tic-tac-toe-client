@@ -54,7 +54,11 @@
           <input type="submit" value="CHANGE">
         </fieldset>
       </form>
-
+      
+<p id="sign-out-message"></p>
+<form id="sign-out">
+  <input type="submit" value="Sign Out">
+</form>
       </section>
 
       <input id="newGame" type="button" value="New Game" onclick="msg1()">
@@ -62,13 +66,7 @@
       function msg1(){
         console.log('start new game')
       }
-      </script>
-      <input id="signOut" type="button" value="Log Out" onclick="msg()">
-      <script>
-      function msg(){
-        alert("Logged Out");
-      }
-      </script>
+
 
 <div class="board-container flex-container flex-column flex-center">
   <div class="board flex-container flex-wrap flex-center">

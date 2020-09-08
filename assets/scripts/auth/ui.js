@@ -36,6 +36,17 @@ const onChangePasswordFailure = function(error) {
   $('#change-password-message').text('Password change failed try again!')
 }
 
+const onSignOutSuccess = function(response) {
+console.log('signed out')
+store.user=response.user
+  $('#sign-out-message').text('You have successfully signed out ' + response.user.email)
+$('#sign-out-form').trigger('reset')
+}
+const onSignOutFailure = function(error) {
+  console.log('not signed out')
+  $('#sign-out-message').text('Sign out failed try again')
+}
+
 
 module.exports= {
   onSignUpSuccess,
@@ -44,5 +55,7 @@ module.exports= {
   onSignInFailure,
   onChangePasswordSuccess,
   onChangePasswordFailure,
+  onSignOutSuccess,
+  onSignOutFailure,
 
 }
