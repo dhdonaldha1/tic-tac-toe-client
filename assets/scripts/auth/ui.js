@@ -13,7 +13,7 @@ const onSignUpFailure = function(error) {
 const onSignInSuccess = function(response) {
 console.log('SIGNED IN')
 store.user = response.user
-  $('.board').show()
+  // $('.board').show()
   $('#signOut').show()
   $('#newGame').show()
   $('#sign-in-message').text('Thanks for signing in ' + response.user.email)
@@ -38,15 +38,31 @@ const onChangePasswordFailure = function(error) {
 
 const onSignOutSuccess = function(response) {
 console.log('signed out')
-store.user=response.user
-  $('#sign-out-message').text('You have successfully signed out ' + response.user.email)
+  $('#sign-out-message').text('You have successfully signed out ' + store.user.email)
 $('#sign-out-form').trigger('reset')
 }
 const onSignOutFailure = function(error) {
   console.log('not signed out')
   $('#sign-out-message').text('Sign out failed try again')
 }
+ const onNewGameSuccess = function(respose) {
+   console.log('started new game')
+   $('#new-game-message').text('You have started a new game ')
+   $('#new-game').trigger('reset')
+ }
+ const onNewGameFailure = function(error){
+   console.log('failed to start new game')
+    $('#new-game-message').text('failed to start new game?')
+ }
 
+
+// const onGetStatsSuccess = function(res){
+//   $('#game-history-message').text('You have played ${res.games.length} games!')
+//   console.log('viewed games successfully')
+// }
+// const onGetStatsFailure = function(err){
+//   console.log('cant view games')
+// }
 
 module.exports= {
   onSignUpSuccess,
@@ -57,5 +73,9 @@ module.exports= {
   onChangePasswordFailure,
   onSignOutSuccess,
   onSignOutFailure,
+  onNewGameSuccess,
+  onNewGameFailure,
+  // onGetStatsSuccess,
+  // onGetStatsFailure,
 
 }

@@ -34,6 +34,43 @@ const signOut = function (data) {
   })
 }
 
+const newGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: "POST",
+    data: data,
+    headers: {Authorization: 'Bearer ' + store.user.token}
+  })
+}
+
+
+// const gameOver = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/games/:over?',
+//     method: "GET",
+//     data: data,
+//     headers: {Authorization: 'Bearer ' + store.user.token}
+//   })
+// }
+
+
+// const getGame = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/games/:id',
+//     method: "GET",
+//     data: data,
+//     headers: {Authorization: 'Bearer ' + store.user.token}
+//   })
+// }
+//
+// const updateGame = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/games/:id',
+//     method: "PATCH",
+//     headers: {Authorization: 'Bearer ' + store.user.token},
+//     data: data
+//   })
+
 
 
 module.exports ={
@@ -41,4 +78,5 @@ module.exports ={
   signIn: signIn,
   changePassword: changePassword,
   signOut: signOut,
+  newGame: newGame,
 }

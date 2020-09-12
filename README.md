@@ -3,10 +3,10 @@
 This application allows the user to play tic tac toe with another player either as X or O. The user will also be able to view previous game history.  
 
 ## Important Links
-
+<a href="https://git.generalassemb.ly/ga-wdi-boston/game-project/blob/master/requirements.md">Requirements</a>
 
 ## Planning Story
-At first I prioritized completing the sign up/in, change password and sign out html and javascript functions.  Whenever I got stuck, I would send a ticket and work on the scss style part.  Next I created the board. At first I tried to create it using the div column we learned but failed to. Then I made the board using flex containers.  Once the board was aligned and centered I added the X and O, then added the function that set each turn to a player and each player to X and O. 
+At first I prioritized completing the sign up/in, change password and sign out html and javascript functions.  Whenever I got stuck, I would send a ticket and work on the scss style part.  Next I created the board. At first I tried to create it using the div column we learned but failed to. Then I made the board using flex containers.  Once the board was aligned and centered I added the X and O, then added the function that set each turn to a player and each player to X and O.
 
 ### User Stories
 
