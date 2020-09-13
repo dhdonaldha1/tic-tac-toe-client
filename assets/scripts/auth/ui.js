@@ -13,9 +13,12 @@ const onSignUpFailure = function(error) {
 const onSignInSuccess = function(response) {
 console.log('SIGNED IN')
 store.user = response.user
-  // $('.board').show()
-  $('#signOut').show()
-  $('#newGame').show()
+
+  $('#sign-out').show()
+  $('#new-game').show()
+  $('#reset').show()
+  $('#view-game').show()
+  $('.board').show()
   $('#sign-in-message').text('Thanks for signing in ' + response.user.email)
 $('#sign-in-form').trigger('reset')
 $('#change-password').show()
@@ -74,13 +77,16 @@ const onSignOutFailure = function(error) {
     $('#view-game-message').text('no games played')
  }
 
-// const onGetStatsSuccess = function(res){
-//   $('#game-history-message').text('You have played ${res.games.length} games!')
-//   console.log('viewed games successfully')
-// }
-// const onGetStatsFailure = function(err){
-//   console.log('cant view games')
-// }
+ const onGameOverSuccess = function(response) {
+   console.log('games over RIGHT')
+   // $('#view-game-message').text('Games played ... ')
+   $('#view-game').trigger('reset')
+ }
+ const onGameOverFailure = function(error){
+   console.log('game over WRONG')
+    // $('#view-game-message').text('no games played')
+ }
+
 
 module.exports= {
   onSignUpSuccess,
@@ -97,7 +103,7 @@ module.exports= {
   onUpdateGameFailure,
   onViewGameSuccess,
   onViewGameFailure,
-  // onGetStatsSuccess,
-  // onGetStatsFailure,
+  onGameOverSuccess,
+  onGameOverFailure,
 
 }

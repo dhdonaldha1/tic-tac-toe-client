@@ -52,9 +52,14 @@ const onNewGame = function(event){
   // gameOver=false
   api.newGame(data)
   .then(ui.onNewGameSuccess)
-  // .then(onGetStats())
   .catch(ui.onNewGameFailure)
 }
+
+const gameOver = function(event){
+  event.preventDefault()
+console.log('game over message function')
+}
+
 const onUpdateGame = function(event){
   event.preventDefault()
   const form = event.target
@@ -81,11 +86,8 @@ const onReset = function(event){
   $('.square').html('')
 
 }
-// const onGetStats = function (){
-//   api.getStats()
-//   .then(ui.onGetStatsSuccess)
-//   .catch(ui.onGetStatsFailure)
-// }
+
+
 
 
 
@@ -99,4 +101,5 @@ module.exports = {
   onUpdateGame: onUpdateGame,
   onViewGame: onViewGame,
   onReset: onReset,
+  gameOver: gameOver,
 }
