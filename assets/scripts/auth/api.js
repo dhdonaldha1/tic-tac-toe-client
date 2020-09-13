@@ -43,7 +43,14 @@ const newGame = function (data) {
   })
 }
 
-
+const updateGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/:id',
+    method: "PATCH",
+    headers: {Authorization: 'Bearer ' + store.user.token},
+    data: data
+  })
+}
 // const gameOver = function (data) {
 //   return $.ajax({
 //     url: config.apiUrl + '/games/:over?',
@@ -54,22 +61,16 @@ const newGame = function (data) {
 // }
 
 
-// const getGame = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/games/:id',
-//     method: "GET",
-//     data: data,
-//     headers: {Authorization: 'Bearer ' + store.user.token}
-//   })
-// }
-//
-// const updateGame = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/games/:id',
-//     method: "PATCH",
-//     headers: {Authorization: 'Bearer ' + store.user.token},
-//     data: data
-//   })
+const viewGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/:id',
+    method: "GET",
+    data: data,
+    headers: {Authorization: 'Bearer ' + store.user.token}
+  })
+}
+
+
 
 
 
@@ -79,4 +80,6 @@ module.exports ={
   changePassword: changePassword,
   signOut: signOut,
   newGame: newGame,
+  updateGame: updateGame,
+  viewGame: viewGame,
 }

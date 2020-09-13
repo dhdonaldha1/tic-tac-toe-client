@@ -14,6 +14,8 @@ $('#change-password').hide()
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#new-game').on('submit', authEvents.onNewGame)
   $('#reset').on('submit', authEvents.onReset)
+  $('#update-game').on('submit', authEvents.onUpdateGame)
+  $('#view-game').on('submit', authEvents.onViewGame)
 })
 
 let player1= "X";
@@ -23,7 +25,7 @@ let move=0;
 let sqr= $('.square');
 let winnerContainer = $('.winner')
 
-sqr.on('click',function(a){
+sqr.one('click',function(a){
   move++;
 
   if(turn === 1){
@@ -35,38 +37,45 @@ sqr.on('click',function(a){
     event.target.style.color = "red";
     turn--;
   }
-  // if(checkWinner()){
-  //   let theWinner = turn == 1?player2:player1;
-  //   declareWinner(theWinner);
-  // }
-  checkWinner();
-});
-function checkWinner (){
-  if(move > 4){
-    let moves = Array.prototype.slice.call($('.square'))
-    let results = moves.map(function(square){
-      return square.innerHTML
 
-    });
-    console.log(results)
+
+  if(checkWinner()){
+    let theWinner = turn == 1?player2:player1;
+    declareWinner(theWinner);
   }
+  // checkWinner();
+});
+
+
+function checkWinner() {
+    if (move > 4) {
+        var sqr = $('.square');
+        var moves = Array.prototype.slice.call($(".square"));
+        var results = moves.map(function(square) { return square.innerHTML; });
+        var winningCombos = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+        return winningCombos.find(function(combo) {
+            if (results[combo[0]] !== "" && results[combo[1]] !== "" && results[combo[2]] !== "" && results[combo[0]] === results[combo[1]] && results[combo[1]] === results[combo[2]]) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+    }
 }
 
+// let table = ['','','','','','','','','']
+// let square = $('.square')
 
-
-// let winningCombos = [
-// [0, 1, 2],
-// [3, 4, 5],
-// [6, 7, 8],
-// [0, 3, 6],
-// [1, 4, 7],
-// [2, 5, 8],
-// [0, 4, 8],
-// [2, 4, 6]
-// ];
-
-// const gameWin = function(square){
-//
+// function checkForWinner (){
 //     if (square[0] === square[1] && square[0] === square[2] && square[0] !== ''){
 //       return true
 //     } else if (square[3] === square[4] && square[3] === square[5] && square[3] !== ''){
@@ -86,9 +95,19 @@ function checkWinner (){
 //     } else {
 //       return false
 // }}
+// let board = $('.board')
+// function checkForWinner(){
+// if (board[0].textContent === "X" && board[1].textContent === "X" && board[2].textContent === "X"){
+//   console.log('x wins')}}
+
+// if(checkForWinner()) {
+//   console.log('we have a winner')
+// } else {
+//   console.log('we dont have a winner')
+// }
 
 function declareWinner(winner) {
-  winnerContainer('display', 'block');
+  winnerContainer.css('display', 'block');
   winner = winner === player1 ? 'X':'O';
   winnerContainer.html(winner + "wins!")
 }
