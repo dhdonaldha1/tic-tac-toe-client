@@ -1,0 +1,101 @@
+@import '~bootstrap/scss/bootstrap';
+
+body{
+  background-color: #a9a9a9;
+}
+h1{
+  text-align: center;
+  font-size: 50px;
+  color: #191970;
+}
+h2{
+  color: #191970;
+  font-size: 30px;
+  text-align: center;
+}
+h3{
+font-size: 15px;
+text-align: center;
+}
+
+.legend{
+  color: red;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.flex-center{
+  justify-content: center;
+  align-items: center;
+}
+.board-container{
+  height:100%;
+  Width: 100%;
+  padding: 50px 0 0 0;
+}
+
+.board{
+  width: 618px;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  border: 2px solid blue;
+  background-color: #808080;
+  font-size: 100px;
+}
+
+// .squareother {
+//   width: 200px;
+//   height: 200px;
+//   border: 2px solid blue;
+//   background-color: white;
+// }
+
+.square:hover{
+  background-color: white;
+}
+
+// .squareother:hover{
+//   background-color: blue;
+// }
+#sign-out{
+  position: absolute;
+  right: 250px;
+  padding: 10px;
+}
+
+#new-game{
+  position: absolute;
+  padding: 10px;
+}
+#reset{
+  position: absolute;
+  left: 100px;
+  padding: 10px;
+}
+#view-game{
+  right: 50%;
+  position: absolute;
+  padding: 10px;
+}
+
+.winner{
+  display: none;
+  color: red;
+  padding: 15px;
+  font-size: 35px;
+  text-align: center;
+  border: 10px;
+}
