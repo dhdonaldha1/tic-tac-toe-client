@@ -6,7 +6,7 @@ This application allows the user to play tic tac toe with another player either 
 <a href="https://git.generalassemb.ly/ga-wdi-boston/game-project/blob/master/requirements.md">Requirements</a>
 
 ## Planning Story
-At first I prioritized completing the sign up/in, change password and sign out html and javascript functions.  Whenever I got stuck, I would send a ticket and work on the scss style part.  Next I created the board. At first I tried to create it using the div column we learned but failed to. Then I made the board using flex containers.  Once the board was aligned and centered I added the X and O, then added the function that set each turn to a player and each player to X and O. Next, was to ensure that tiles that are taken cannot be clicked.  Once the win conditions were created, be able to display to the users who the winner is. Make sure each move is updating API.  Create a proper reset button.  Saved all the styling and show() and hide() functions for the end.
+At first I prioritized completing the sign up/in, change password and sign out html and javascript functions.  Whenever I got stuck, I would send a ticket and work on the scss style part.  Next I created the board. At first I tried to create it using the div column we learned but failed to. Then I made the board using flex containers.  Once the board was aligned and centered I added the X and O, then added the function that set each turn to a player and each player to X and O. Next, was to ensure that tiles that are taken cannot be clicked.  Once the win conditions were created, be able to display to the users who the winner is. Make sure each move is updating API.  Create a proper reset button.  Saved all the styling and show() and hide() functions for the end. Fix buggy signing up, signing in and signing out repeatedly
 
 ### User Stories
 
@@ -32,6 +32,8 @@ At first I prioritized completing the sign up/in, change password and sign out h
 - Would like to eventually add a versus ai option with logic
 - Still need to find a way to reset the board so tiles can be clickable again
 - Still create functional get request to see number of previous games
+- Repeatedly signing in, signing up, and signing out causes stacking of messages
+- Tie results condition and show message
 
 ## Images
 

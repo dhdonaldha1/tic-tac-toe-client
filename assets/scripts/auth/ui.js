@@ -16,14 +16,15 @@ store.user = response.user
 
   $('#sign-out').show()
   $('#new-game').show()
-  $('#reset').show()
-  $('#view-game').show()
+
   $('.board').show()
   $('#sign-in-message').text('Thanks for signing in ' + response.user.email)
 $('#sign-in-form').trigger('reset')
 $('#change-password').show()
 $('#sign-up-form').hide()
   $('#sign-in-form').hide()
+  $('#sign-up-message').hide()
+  $('#sign-out-message').hide()
 }
 const onSignInFailure = function(error) {
   console.log('failed sign in try again')
@@ -43,6 +44,15 @@ const onSignOutSuccess = function(response) {
 console.log('signed out')
   $('#sign-out-message').text('You have successfully signed out ' + store.user.email)
 $('#sign-out-form').trigger('reset')
+  $('#change-password').hide()
+  $('.board').hide()
+  $('#sign-up-form').show()
+  $('#sign-in-form').show()
+  $('#sign-in-message').hide()
+  $('#sign-up-message').hide()
+  $('#change-password-message').hide()
+  $('#new-game-message').hide()
+  $('.winner').hide()
 }
 const onSignOutFailure = function(error) {
   console.log('not signed out')
@@ -52,6 +62,8 @@ const onSignOutFailure = function(error) {
    console.log('started new game')
    $('#new-game-message').text('You have started a new game ')
    $('#new-game').trigger('reset')
+   $('#reset').show()
+   $('#view-game').show()
  }
  const onNewGameFailure = function(error){
    console.log('failed to start new game')
@@ -75,6 +87,7 @@ const onSignOutFailure = function(error) {
  const onViewGameFailure = function(error){
    console.log('cannot find games')
     $('#view-game-message').text('no games played')
+    $('#new-game-message').hide()
  }
 
  const onGameOverSuccess = function(response) {

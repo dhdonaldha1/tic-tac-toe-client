@@ -41,7 +41,7 @@ text-align: center;
 .board-container{
   height:100%;
   Width: 100%;
-  padding: 75px 0 0 0;
+  padding: 50px 0 0 0;
 }
 
 .board{
@@ -70,11 +70,32 @@ text-align: center;
 // .squareother:hover{
 //   background-color: blue;
 // }
+#sign-out{
+  position: absolute;
+  right: 250px;
+  padding: 10px;
+}
+
+#new-game{
+  position: absolute;
+  padding: 10px;
+}
+#reset{
+  position: absolute;
+  left: 100px;
+  padding: 10px;
+}
+#view-game{
+  right: 50%;
+  position: absolute;
+  padding: 10px;
+}
 
 .winner{
   display: none;
   color: red;
   padding: 15px;
   font-size: 35px;
-  text-align: center,
+  text-align: center;
+  border: 10px;
 }
